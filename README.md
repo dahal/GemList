@@ -1,4 +1,3 @@
-Sinatra Skeleton
+TODAYS TREND
 ==============
 
-Sinatra skeleton and scaffold generator

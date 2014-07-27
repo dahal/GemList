@@ -5,6 +5,9 @@ ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
+# Require the secret file
+require APP_ROOT.join('config', 'secrets')
+
 # Require gems we care about
 require 'rubygems'
 
@@ -18,8 +21,7 @@ require 'logger'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
-
-
+require 'omniauth-twitter' #for twitter authentication
 
 require 'erb'
 
@@ -38,6 +40,11 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+
+  # Omniauth
+  use OmniAuth::Builder do
+    provider :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
+  end
 end
 
 
@@ -48,3 +55,8 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+
+
+
+
