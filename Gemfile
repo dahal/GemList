@@ -36,5 +36,7 @@ group :test, :development do
   gem 'shotgun'
   gem 'awesome_print'
   gem 'jasmine'
+  gem 'guard-rspec'
+  gem 'terminal-notifier-guard'
 end
 
