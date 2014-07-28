@@ -12,7 +12,7 @@ end
 
 get '/profile' do
   twitter = request.env['omniauth.auth']
-  twitter_id = twitter['uid']
+  #twitter_id = twitter['uid']
   erb:'/user/profile'
 
 end

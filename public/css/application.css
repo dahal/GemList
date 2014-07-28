@@ -1,3 +1,144 @@
-body{
+@import 'bootstrap.css';
+
+/*! for popup log in with social button */
+.btn-sm-login {
+  padding: 5px 10px;
+  font-size: 25px;
+  line-height: 1.1;
+  border-radius: 4;
+}
+
+/*!  for footer */
+.navbar-bottom {
+
+  bottom: 0;
+  margin-bottom: 0;
+  border-width: 1px 0 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+/*! custom button size */
+.custom {
+    width: 150px !important;
+}
+
+/*! for divider footer */
+.mycontent-left {
+  border-right: 1px solid #7f8c8d;
+}
+
+.tx-md {
   font-size: 18px;
+}
+
+.tx-xs {
+  font-size: 50%;
+}
+
+.text-cloud {
+  color: #ecf0f1;
+}
+
+.text-ruby {
+  color: #841B2D
+}
+
+.btn-ruby {
+  color: #ffffff;
+  background-color: #841B2D;
+  border-color: #8C2A3B;
+}
+.text-midnight{
+  color: #2c3e50;
+}
+
+
+.btn-margin { 
+  margin-bottom:5px; 
+}
+
+.btn-sms {
+  padding: 5px 10px;
+  font-size: 15px;
+  line-height: 0.9;
+  border-radius: 0;
+}
+
+
+
+.btn-gray {
+  color: #ffffff;
+  background-color: #333333;
+  border-color: #333333;
+}
+
+.btn-gray:hover,
+.btn-gray:focus,
+.btn-gray:active,
+.btn-gray.active,
+.open .dropdown-toggle.btn-gray {
+  color: #ffffff;
+  background-color: #464646;
+  border-color: #464646;
+}
+
+.btn-gray:active,
+.btn-gray.active,
+.open .dropdown-toggle.btn-gray {
+  background-image: none;
+}
+
+.centred {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+[class*="btn"].centred {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+#share-buttons img {
+width: 45px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+}
+
+.well {
+  border: 1px solid #ddd;
+  background: -webkit-linear-gradient(top, #ffffff, #f9f9f9);
+  background: -moz-linear-gradient(top, #ffffff, #f9f9f9);
+  background-color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius:5px;
+}
+.ucode_well {
+  background-color:#fff;
+  padding: 20px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -moz-box-shadow: inset 0 0 2px 2px #ffffff;
+  -webkit-box-shadow: inset 0 0 2px 2px #ffffff;
+  box-shadow: inset 0 0 2px 2px #ffffff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.ucode_feed_well {
+  background-color:#fff;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0px 0px 2px 2px #ffffff;
+  box-shadow: inset 0px 0px 2px 2px #ffffff;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  margin-bottom:20px;
 }
