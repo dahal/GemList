@@ -43,7 +43,7 @@ configure do
 
   # Omniauth
   use OmniAuth::Builder do
-    provider :twitter, CONSUMER_KEY, CONSUMER_SECRET,
+    provider :twitter, CONSUMER_KEY, CONSUMER_SECRET
   end
 end
 
@@ -55,8 +55,3 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
-
-
-
-
-
