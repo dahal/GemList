@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-#ruby '2.1.2'
+ruby '2.1.2'
 
 # PostgreSQL driver
 gem 'pg'
@@ -36,5 +36,7 @@ group :test, :development do
   gem 'shotgun'
   gem 'awesome_print'
   gem 'jasmine'
+  gem 'guard-rspec'
+  gem 'terminal-notifier-guard'
 end
 

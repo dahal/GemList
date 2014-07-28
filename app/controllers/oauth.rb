@@ -1,5 +1,4 @@
 get '/login' do
-  puts "*"*20
   redirect to("/auth/twitter")
 end
 
