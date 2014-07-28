@@ -34,5 +34,7 @@ group :test, :development do
   gem 'factory_girl'
   gem 'faker'
   gem 'shotgun'
+  gem 'awesome_print'
+  gem 'jasmine'
 end
 
