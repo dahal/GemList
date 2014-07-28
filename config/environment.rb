@@ -5,8 +5,6 @@ ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
-# Require the secret file
-require APP_ROOT.join('config', 'secrets')
 
 # Require gems we care about
 require 'rubygems'
@@ -28,6 +26,8 @@ require 'erb'
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
+# Require the secret file
+require APP_ROOT.join('config', 'secrets')
 APP_NAME = APP_ROOT.basename.to_s
 
 configure do
@@ -43,7 +43,7 @@ configure do
 
   # Omniauth
   use OmniAuth::Builder do
-    provider :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
+    provider :twitter, CONSUMER_KEY, CONSUMER_SECRET,
   end
 end
 
