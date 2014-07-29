@@ -21,6 +21,8 @@ gem 'rake'
 # Authenticaton and API
 gem 'omniauth-twitter'
 
+# Others
+gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'

@@ -16,7 +16,6 @@ require 'pg'
 require 'active_record'
 require 'logger'
 
-
 require 'sinatra'
 require 'omniauth-twitter' #for twitter authentication
 require 'erb'
@@ -26,6 +25,8 @@ if development?
   require 'awesome_print'
   require 'guard'
   require 'terminal-notifier-guard'
+  require 'dotenv'
+  Dotenv.load
 end
 
 
@@ -33,7 +34,7 @@ end
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 # Require the secret file
-require APP_ROOT.join('config', 'secrets')
+#require APP_ROOT.join('config', 'secrets')
 APP_NAME = APP_ROOT.basename.to_s
 
 configure do
