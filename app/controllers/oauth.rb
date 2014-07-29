@@ -4,16 +4,24 @@ end
 
 get '/auth/twitter/callback' do
   env['omniauth.auth'] ? session[:admin] = true : halt(401,'Not Authorized')
-  "You are now logged in"
-  p params
+ 	ap request.env['omniauth.auth']
+ 	session[:twitter_name] = request.env['omniauth.auth']["info"]["name"]
+ 	session[:twitter_image] = request.env['omniauth.auth']["info"]["image"]
+ 	session[:twitter_id] = request.env['omniauth.auth']["uid"]
+ 	session[:description] = request.env['omniauth.auth']["info"]["description"]
+ 	
   redirect'/profile'
+
 end
 
 get '/profile' do
-  twitter = request.env['omniauth.auth']
-  #twitter_id = twitter['uid']
+	p '*'*20
+	@name = session[:twitter_name]
+	@profile_image = session[:twitter_image]
+	@description = session[:description]
+	#p @name
+  request.env['omniauth.auth']
   erb:'/user/profile'
-
 end
 
 get '/auth/failure' do

@@ -46,7 +46,7 @@ configure do
 
   # Omniauth
   use OmniAuth::Builder do
-    provider :twitter, CONSUMER_KEY, CONSUMER_SECRET
+    provider :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
   end
 end
 
