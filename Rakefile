@@ -224,9 +224,10 @@ task "console" do
   exec "irb -r./config/environment"
 end
 
-desc "Run the specs"
-RSpec::Core::RakeTask.new(:spec)
 
-task :default  => :spec
-require 'jasmine'
-load 'jasmine/tasks/jasmine.rake'
+# desc "Run the specs"
+# RSpec::Core::RakeTask.new(:spec)
+
+# task :default  => :spec
+# require 'jasmine'
+# load 'jasmine/tasks/jasmine.rake'
