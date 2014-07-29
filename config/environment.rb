@@ -18,13 +18,16 @@ require 'logger'
 
 
 require 'sinatra'
-require "sinatra/reloader" if development?
 require 'omniauth-twitter' #for twitter authentication
-
 require 'erb'
-require 'awesome_print'
-require 'guard'
-require 'terminal-notifier-guard'
+
+if development?
+  require "sinatra/reloader" 
+  require 'awesome_print'
+  require 'guard'
+  require 'terminal-notifier-guard'
+end
+
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
