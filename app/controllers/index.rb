@@ -1,4 +1,5 @@
 get '/' do
+	#twitter = Twitter::Client
   erb:'/index'
 end
 
@@ -19,8 +20,13 @@ get '/auth/twitter/callback' do
  	session[:description] = request.env['omniauth.auth']["info"]["description"]
  	session[:username] = request.env['omniauth.auth']["info"]["nickname"]
  	
-  redirect'/:username'
+  redirect"/#{session[:username]}"
 
+end
+
+get '/logout' do
+	session[:twitter_id] = nil
+	redirect '/'
 end
 
 get '/:username' do
@@ -29,10 +35,4 @@ get '/:username' do
 	@description = session[:description]
 	@username = session[:username]
   erb:'/index'
-end
-
-get '/logout' do
-	#ap session
-	session[:twitter_id] = nil
-	redirect '/'
 end
