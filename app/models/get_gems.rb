@@ -4,15 +4,18 @@ module GetGems
 		base_uri "https://rubygems.org/api/v1"
 
 		def initialize
-			#@auth = "'Authorization' => 'Bearer #{ENV['TEITTER_ACCESS']}"
+
 		end
 
-		def top_fifty
+		def top_ten
 			response = self.class.get('/downloads/all.json', {
 				query: {with: 'paramaters'}
 				})
-			return JSON.parse(response.body)
+			ten = JSON.parse(response.body)["gems"].first(10)
+			# parsed.each do |item|
+			# 	twenty << item.first
+			# end
+			ten.map!{|gem| gem.first}
 		end
-
 	end
 end

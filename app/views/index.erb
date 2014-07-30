@@ -1,20 +1,59 @@
-<a href="/login">
-	<i class="fa fa-twitter">Twitter</i> 
-</a>
+<!--
+<div class="row">
+		<div class="container">
+-->
+<center>
+	<header><h1>RubyGems</h1></header>
+</center>
 
+<!--Login with twitter or show user's info-->
+<div class="col-md-8 col-md-offset-2">
+	<center>
+		<div class="row">
+			<% if logged_in? %>
+				<a href="#"><img height="100" width="100"src="<%= @profile_image %>" class="img-responsive img-circle" /></a>
+				<h2><%= @name %><br/>
+					<a href="http://twitter.com/<%= @username %>" target="_blank" >
+						<i class="fa fa-twitter"> <%= @username %></i>
+					</a>
+					<br/>
+					<small><%= @description %></small><br>
+					<small><a href="/logout">Logout</a></small>
+				</h2>
+			<% else %>
+				<a href="/login" class="btn btn-md btn-primary">
+					<i class="fa fa-twitter"> Login with Twitter</i> 
+				</a>
+			<% end %>
+		</div>
+	</center>
 
+	<!-- Search Box -->
+	<!-- <div class="row">
+		<div class="col-lg-12">
+		  <div class="input-group">
+				<center>
+		      <input type="text" class="form-control" placeholder="Search for Gems">
+		      <span class="input-group-btn">
+		        <button class="btn btn-primary" type="button">Search</button>
+		      </span>
+	    	</center>
+		  </div>
+	  </div>
+	</div>
+	<hr> -->
 
-<p><%= @top_fifty_gems %></p>
+<!--Show top 20 Gems -->
+	<center><h3 class="text-success">Top 10 Ruby Gems</center></h3>
+	<% @top_ten_gems.each do |gem| %>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading"><strong><%= gem["full_name"] %></strong></div>
+				<div class="panel-body">
+			  	<%= gem["summary"] %>
+				</div>
+			</div>
+		</div>
+	<% end %>	
 
-<% if logged_in? %>
-	<a href="#"><img height="100" width="100"src="<%= @profile_image %>" /></a>
-		<h2><%= @name %><br/>
-			<a href="http://twitter.com/<%= @username %>" target="_blank" ><i class="fa fa-twitter"> <%= @username %></i></a><br/>
-			<small><%= @description %></small><br>
-			<small><a href="/logout">Logout</a></small>
-		</h2>
-	<% else %>
-		<a href="/login">
-			<i class="fa fa-twitter">Login with Twitter</i> 
-		</a>
-	<% end %>
+</div>

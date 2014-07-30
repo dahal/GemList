@@ -7,11 +7,26 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title>Trendly</title>
+  <title>RubyGems</title>
 </head>
 <body>
-	
+	<!-- Navbar -->
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="btn-group btn-group-justified">
+				<a href="/" class="btn btn-sm btn-primary">HOME</a>
+				<a href="#" class="btn btn-sm btn-primary">TOP 10 GEMS</a>
+				<!--<a href="#" class="btn btn-sm btn-primary">WORKS</a>-->
+				<% if logged_in? %>
+					<a href="#" class="btn btn-sm btn-primary">Hey! <%= @name %></a>
+				<% else %>
+					<a href="/login" class="btn btn-sm btn-primary"><i class="fa fa-twitter"> LOG IN WITH TWITTER</i></a>
+				<% end %>
+			</div><!--/btn-group-->
+		</div><!--/col-md-6 col-md-offset-3-->
+	</div><!--/row-->
+	<div class="container">
 		<%= yield %>
-
+	</div>
 </body>
 </html>
