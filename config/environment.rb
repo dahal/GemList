@@ -19,6 +19,10 @@ require 'logger'
 require 'sinatra'
 require 'omniauth-twitter' #for twitter authentication
 require 'erb'
+require 'gems'
+require 'json'
+require 'httparty'
+require 'sass'
 
 if development?
   require "sinatra/reloader" 

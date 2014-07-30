@@ -20,6 +20,10 @@ gem 'rake'
 
 # Authenticaton and API
 gem 'omniauth-twitter'
+gem 'gems'
+gem 'json'
+gem 'httparty'
+gem 'sass'
 
 # Others
 gem 'dotenv'
