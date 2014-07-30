@@ -26,7 +26,6 @@ gem 'httparty'
 gem 'sass'
 
 # Others
-gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'
@@ -44,5 +43,6 @@ group :test, :development do
   gem 'jasmine'
   gem 'guard-rspec'
   gem 'terminal-notifier-guard'
+  gem 'dotenv'
 end
 
