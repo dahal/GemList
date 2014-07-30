@@ -1,7 +1,12 @@
-$(document).ready(function() {
-	$(".search").on("click", searchGems)
-});
+// $(document).ready(function() {
+// 	$("#search").on("click", searchGems)
+// });
 
-function searchGems(){
-	
-}
+// function searchGems(){
+// 	$.ajax({
+// 	  dataType: "json",
+// 	  url: "https://rubygems.org/api/v1/search.json?query",
+// 	  data: data,
+// 	  success: success
+// 	});
+// }
