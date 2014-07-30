@@ -29,27 +29,28 @@
 	</center>
 
 	<!-- Search Box -->
-	<!-- <div class="row">
-		<div class="col-lg-12">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 search">
 		  <div class="input-group">
-				<center>
-		      <input type="text" class="form-control" placeholder="Search for Gems">
+		      <input type="text" class="form-control" placeholder="SEARCH FOR GEMS">
 		      <span class="input-group-btn">
 		        <button class="btn btn-primary" type="button">Search</button>
 		      </span>
-	    	</center>
 		  </div>
 	  </div>
 	</div>
-	<hr> -->
+	<hr>
 
 <!--Show top 20 Gems -->
 	<center><h3 class="text-success">Top 10 Ruby Gems</center></h3>
 	<% @top_ten_gems.each do |gem| %>
 		<div class="col-md-6">
 			<div class="panel panel-default">
-				<div class="panel-heading"><strong><%= gem["full_name"] %></strong></div>
+				<div class="panel-heading"><strong><a href="<%= gem_link(gem["full_name"]) %>"><%= remove_version_number(gem["full_name"]) %></strong></a></div>
 				<div class="panel-body">
+					<div class="command">
+						~> gem install <%= remove_version_number(gem["full_name"]) %>
+			  	</div>
 			  	<%= gem["summary"] %>
 				</div>
 			</div>
