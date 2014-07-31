@@ -1,3 +1,3 @@
-class TopFiftyGems < ActiveRecord::Base
+class TopFiftyGems < ActiveRecord::Base.extend(Textacular)
   
 end
