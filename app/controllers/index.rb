@@ -45,3 +45,8 @@ get '/gems' do
 	erb:'/gems'
 end
 
+get '/search' do
+	#@gems = AllGems.
+	erb:'/'
+end
+
