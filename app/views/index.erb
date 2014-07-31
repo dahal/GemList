@@ -1,7 +1,3 @@
-<!--
-<div class="row">
-		<div class="container">
--->
 <br><br><br>
 <center>
 	<header><h1>Gem List</h1></header>
@@ -34,12 +30,19 @@
 	<!-- Search Box -->
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1 search">
-		  <div class="input-group">
-		      <input type="text" class="form-control" placeholder="SEARCH FOR GEMS">
-		      <span class="input-group-btn">
-		        <button id="search" class="btn btn-primary" type="button">Search</button>
-		      </span>
-		  </div>
+			<form action="/search" method="GET">
+			  <div class="input-group">
+			      <input id="search" type="text" class="form-control" placeholder="SEARCH FOR GEMS" name="search">
+			      <span class="input-group-btn">
+			        <button class="btn btn-primary" type="submit" id="searchnow">Search</button>
+			      </span>
+			  </div>
+		  </form>
+		  <div class="panel panel-default search-results">
+  			<!-- <div class="panel-body">
+    			
+  			</div> -->
+			</div>
 	  </div>
 	</div>
 	<hr>

@@ -45,8 +45,8 @@ get '/gems' do
 	erb:'/gems'
 end
 
-get '/search' do
-	#@gems = AllGems.
-	erb:'/'
+post '/search' do
+	#p params['name']
+	@gems = AllGems.fuzzy_search(name: "#{params['name']}").first(5)
+	@gems.to_json	
 end
-

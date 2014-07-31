@@ -1,12 +1,26 @@
-// $(document).ready(function() {
-// 	$("#search").on("click", searchGems)
-// });
+$(document).ready(function() {
+	$("#searchnow").on("click", searchGems)
+});
 
-// function searchGems(){
-// 	$.ajax({
-// 	  dataType: "json",
-// 	  url: "https://rubygems.org/api/v1/search.json?query",
-// 	  data: data,
-// 	  success: success
-// 	});
-// }
+function searchGems(e){
+	e.preventDefault();
+	var searchWord = $('#search').val()
+	var ajaxSearch = $.ajax({
+		url : '/search',
+		type: 'POST',
+		data: {name: searchWord},
+		dataType: 'json'
+	}).success(function(data) {
+		//debugger
+		//data
+		for (var i = 0; i < data.length; i++) {
+			$(".search-results").append(
+				"<div class='panel-body text-primary'><strong>"+data[i].name+"</strong><br></div>"
+				)
+		};
+	})
+}
+
+
+//<div class='panel-body'>"+data[i].name+"<br></div>
+//$('.search-results').append("Rails <br>")
