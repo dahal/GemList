@@ -38,5 +38,6 @@ ActiveRecord::Base.establish_connection(
   :username => db.user,
   :password => db.password,
   :database => DB_NAME,
+  :pool     => 300,
   :encoding => 'utf8'
 )

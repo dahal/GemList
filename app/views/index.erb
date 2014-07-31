@@ -46,15 +46,19 @@
 
 <!--Show top 20 Gems -->
 	<center><h3 class="text-success">Top 10 Ruby Gems</center></h3>
-	<% @top_ten_gems.each do |gem| %>
+	<% @gems.each do |gem| %>
 		<div class="col-md-6">
 			<div class="panel panel-default">
-				<div class="panel-heading"><strong><a href="<%= gem_link(gem["full_name"]) %>"><%= remove_version_number(gem["full_name"]) %></strong></a></div>
+				<div class="panel-heading">
+					<strong>
+						<a href="<%= gem.name %>"><%= gem.name %>
+					</strong></a>
+				</div>
 				<div class="panel-body">
 					<div class="command">
-						~> gem install <%= remove_version_number(gem["full_name"]) %>
+						~> gem install <%= gem.name %>
 			  	</div>
-			  	<%= gem["summary"] %>
+			  	<%= gem.summary %>
 				</div>
 			</div>
 		</div>

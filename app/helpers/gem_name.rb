@@ -5,6 +5,10 @@ helpers do
 		name_array.join("-")
 	end
 
+	def version(gem_name)
+		gem_name.split("-").pop
+	end
+
 	def gem_link(gem_name_with_version)
 		"http://rubygems.org/gems/"+
 		"#{remove_version_number(gem_name_with_version)}"

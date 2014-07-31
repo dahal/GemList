@@ -27,15 +27,12 @@ get '/:username' do
 	@username = session[:username]
 
 	# Top fifty ruby gems
-	gems = GetGems::Client.new
-	@top_ten_gems = gems.top_ten
-
+	@gems = TopFiftyGems.first(10)
   erb:'/index'
 end
 
 get '/' do
-	gems = GetGems::Client.new
-	@top_ten_gems = gems.top_ten
+	@gems = TopFiftyGems.first(10)
 	#binding.pry
 	@name = session[:twitter_name]
 	@profile_image = session[:twitter_image]
