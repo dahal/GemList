@@ -23,6 +23,7 @@ require 'gems'
 require 'json'
 require 'httparty'
 require 'sass'
+require 'textacular'
 
 if development?
   require "sinatra/reloader" 
