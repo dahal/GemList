@@ -1,7 +1,7 @@
-TODAYS TREND
+GEM LIST
 ==============
 ```
-config/secrets.rb
+.env
 #Twitter
 CONSUMER_KEY=
 CONSUMER_SECRET=
@@ -11,8 +11,7 @@ CONSUMER_SECRET=
 * [X] Get skeleton ready
 * [X] As a user, I want to login with twitter
 * [X] As a user, I want to be redirected to /profile page
-* [] As a user, I want to see my twitter profile pic/username and name after login
-* [] As a user, I was to view list of all twitter trending news on homepage without logging in.
-* [] As a user, I want to be able to read the article when I click on them.
-* [] As a user, I want to be able to favourite the article I like,
-* [] As a user, I wasn to be able to save favourited article on my dashboard.
+* [X] As a user, I want to see my twitter profile pic/username and name after login
+* [X] As a user, I want to see list of top 10 ruby gems.
+* [] As a user, I want to be able to search for the ruby gems and get 5 possible auto complete/suggestions.
+* [] As a user, I want to be able to favourite the ruby gem I like for future access.
