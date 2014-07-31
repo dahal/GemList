@@ -15,12 +15,8 @@ function searchGems(e){
 		//data
 		for (var i = 0; i < data.length; i++) {
 			$(".search-results").append(
-				"<div class='panel-body text-primary'><strong>"+data[i].name+"</strong><br></div>"
+				"<div class='panel-body text-primary'><strong><a href="+data[i].url+">"+data[i].name+"</a></strong><br></div>"
 				)
 		};
 	})
 }
-
-
-//<div class='panel-body'>"+data[i].name+"<br></div>
-//$('.search-results').append("Rails <br>")
